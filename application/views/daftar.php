@@ -65,8 +65,8 @@
                         <tr>
                             <th scope="col" style="width: 5%;">No</th>
                             <th scope="col" style="width: 20%;">Id Event</th>
-                            <th scope="col" style="width: 55%;">Nama Event</th>
-                            <th scope="col" style="width: 15%; text-align: center;">Action</th>
+                            <th scope="col" style="width: 50%;">Nama Event</th>
+                            <th scope="col" style="width: 25%; text-align: center;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,7 +80,10 @@
                                 <td><?= $dt->Nama_Event ?></td>
                                 <td>
                                     <a onclick="deleteConfirm('<?php echo site_url('User_C/delete_p/' . $dt->Id_Event . '/' . $this->session->userdata('nim')) ?>')" href="#!" class="btn btn-sm text-danger">
-                                        <i class="fa fa-trash"></i> Hapus
+                                        <i class="fa fa-trash">Hapus</i>
+                                    </a>
+                                    <a href="<?php echo site_url('Event/detail/' . $dt->Id_Event) ?>" class="btn btn-sm">
+                                        <i class="fa fa-info">Detail</i>
                                     </a>
                                 </td>
                             </tr>
