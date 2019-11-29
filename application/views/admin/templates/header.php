@@ -30,6 +30,7 @@
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
+                        <li><a href="<?php echo base_url("admin/admin/setting/") . $this->session->userdata('id'); ?>"><i class="fa fa-edit m-r-5"></i> Setting</a></li>
                         <li><a href="<?php echo base_url() ?>admin/login_admin/Logout"><i class="ti-power-off m-r-5"></i> Logout</a></li>
                     </ul>
                 </li>

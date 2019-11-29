@@ -33,6 +33,18 @@ class Admin extends CI_Controller
         $this->load->view('admin/manage-admin', $data);
     }
 
+    public function setting($id)
+    {
+        $data['data'] = $this->Admin_Model->getDataAdmin($id);
+        $this->load->view('admin/setting-admin', $data);
+    }
+
+    public function update()
+    {
+        $this->Admin_Model->update();
+        redirect(site_url('admin/dashboard'));
+    }
+
     public function delete($id = null)
     {
         if (!isset($id)) show_404();

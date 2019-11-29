@@ -34,6 +34,20 @@ class Admin_Model extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
+    public function getDataAdmin($id)
+    {
+        return $this->db->get_where($this->_table, ["Id" => $id])->row();
+    }
+
+    public function update()
+    {
+        $post = $this->input->post();
+        $this->Nama = $post["nama"];
+        $this->Nim = $post["nim"];
+        $this->Password = $post["password"];
+        $this->db->update($this->_table, $this, array('Id' => $post['id']));
+    }
+
     public function delete($id)
     {
         return $this->db->delete($this->_table, array("Id" => $id));
